@@ -253,8 +253,8 @@ int [ ] [ ] game = {
     boardHeight = 80;
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     SpaceInvaders a = new SpaceInvaders();
-    a.setPreferredSize(new Dimension(boardWidth*5,boardHeight*5));
-    frame.getContentPane().add(a);
+    //a.setPreferredSize(new Dimension(boardWidth*5,boardHeight*5));
+    //frame.getContentPane().add(a);
     frame.pack();
     frame.setResizable(false);
     frame.setVisible(true);
