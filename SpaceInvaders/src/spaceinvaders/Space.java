@@ -62,7 +62,7 @@ int [ ] [ ] game = {
   private static boolean gameOver=false;
   private static boolean ganhou=false;
   
-  private final static JFrame frame = new JFrame("SpaceInvaders");
+  private final static JFrame frame = new JFrame("Space");
   
   public static int getBoardWidth(){
 	  return boardWidth;
@@ -77,7 +77,7 @@ int [ ] [ ] game = {
     }
 
     public static void setPlatX(int platX) {
-        SpaceInvaders.platX = platX;
+        Space.platX = platX;
     }
   
   
@@ -252,9 +252,9 @@ int [ ] [ ] game = {
     boardWidth = 80;
     boardHeight = 80;
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    SpaceInvaders a = new SpaceInvaders();
-    //a.setPreferredSize(new Dimension(boardWidth*5,boardHeight*5));
-    //frame.getContentPane().add(a);
+    Space a = new Space();
+    a.setPreferredSize(new Dimension(boardWidth*5,boardHeight*5));
+    frame.getContentPane().add(a);
     frame.pack();
     frame.setResizable(false);
     frame.setVisible(true);

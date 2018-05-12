@@ -20,7 +20,7 @@ public class SpaceInvaders {
         //Criei os monstros que vão na tela
         Inimigo[] meusmonstros = new Inimigo[3];
         meusmonstros[0] = new Inimigo(5, 6, 2);
-        meusmonstros[1] = new Inimigo(5, 25, 2);
+        meusmonstros[1] = new Inimigo(30, 25, 2);
         meusmonstros[2] = new Inimigo(5, 15, 2);
         
         
@@ -32,14 +32,19 @@ public class SpaceInvaders {
         
         //Inicia o jogo
         Space.init();
-        
-        Space.desenha(meusmonstros, 3, meustiros, 0);
-        
-        if(Space.apertouDireita()){
-            Space.setPlatX(Space.getPlatX()+1);
-        }
-        if(Space.apertouEsquerda()){
-            Space.setPlatX(Space.getPlatX()-1);
+        for (int i = 0; i < 10; i++) {
+            
+            meusmonstros[0].setY(meusmonstros[0].getY()+1);
+
+
+            if(Space.apertouDireita()){
+                Space.setPlatX(Space.getPlatX()+1);
+            }
+            if(Space.apertouEsquerda()){
+                Space.setPlatX(Space.getPlatX()-1);
+            }
+            
+            Space.desenha(meusmonstros, 3, meustiros, 0);
         }
         
         
