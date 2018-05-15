@@ -34,11 +34,11 @@ public class SpaceInvaders {
         
         //Inicia o jogo
         Space.init();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 48; i++) {
             
             meusmonstros[0].setY(meusmonstros[0].getY()+1);
-
-
+            meusmonstros[1].setY(meusmonstros[1].getY()+1);
+             meusmonstros[2].setY(meusmonstros[2].getY()+1);
             if(Space.apertouDireita()){
                 Space.setPlatX(Space.getPlatX()+1);
             }
