@@ -45,6 +45,10 @@ public class SpaceInvaders {
             //Move os bonecos
             for (int j = 0; j < 12; j++) {
                 meusmonstros[j].setY(meusmonstros[j].getY() + 1);
+                 if(meusmonstros[j].getY()==67){
+                    Space.gameOver();
+                  
+                }
             }
         
 
