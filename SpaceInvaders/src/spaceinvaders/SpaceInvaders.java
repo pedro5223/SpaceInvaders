@@ -18,39 +18,37 @@ public class SpaceInvaders {
     public static void main(String[] args) {
         // TODO code application logic here
         //Local que fica os inimigos
-        Inimigo[] meusmonstros = new Inimigo[8];
+        Inimigo[] meusmonstros = new Inimigo[12];
         //Local que fica os tiros
         Tiro[] meustiros = new Tiro[100];
         //Quantidade de tiros na tela
         int quantidadeTiros = 0;
-        int quantidadeMonst = 8;
+        int quantidadeMonst = 12;
         int posTiro = 76;
         
         
         //Crio os monstros na tela
-        meusmonstros[0] = new Inimigo(5, 6, 2);
-        meusmonstros[1] = new Inimigo(5, 25, 2);
-        meusmonstros[2] = new Inimigo(5, 15, 2);
-        meusmonstros[3] = new Inimigo(20,15, 2);
-        meusmonstros[4] = new Inimigo(20,25, 2);
-        meusmonstros[5] = new Inimigo(20,6, 2);
-        meusmonstros[6] = new Inimigo(35,25, 2);
-        meusmonstros[7] = new Inimigo(35,15, 2);
-        
-        
-        
+        meusmonstros[0] = new Inimigo(2, 5, 2);
+        meusmonstros[1] = new Inimigo(15, 5, 2);
+        meusmonstros[2] = new Inimigo(28, 5, 2);
+        meusmonstros[3] = new Inimigo(41,5, 2);
+        meusmonstros[4] = new Inimigo(54,5,2);
+        meusmonstros[5] = new Inimigo(67,5, 2);
+        meusmonstros[6] = new Inimigo(2,15, 2);
+        meusmonstros[7] = new Inimigo(15,15, 2);
+        meusmonstros[8] = new Inimigo(28,15, 2);
+        meusmonstros[9] = new Inimigo(41,15, 2);
+        meusmonstros[10] = new Inimigo(54,15, 2);
+        meusmonstros[11] = new Inimigo(67,15, 2);
         //Inicia o jogo
         Space.init();
         for (int i = 0; i < 150; i++) {
+            //MOve os bonecos
+            for (int j = 0; j < 12; j++) {
+                meusmonstros[j].setY(meusmonstros[j].getY()+1);
+            }
+           
             
-            meusmonstros[0].setY(meusmonstros[0].getY()+1);
-            meusmonstros[1].setY(meusmonstros[1].getY()+1);
-            meusmonstros[2].setY(meusmonstros[2].getY()+1);
-             meusmonstros[3].setY(meusmonstros[3].getY()+1);
-              meusmonstros[4].setY(meusmonstros[4].getY()+1);
-            meusmonstros[5].setY(meusmonstros[5].getY()+1);
-            meusmonstros[6].setY(meusmonstros[6].getY()+1);
-             meusmonstros[7].setY(meusmonstros[7].getY()+1);  
               
               
               System.out.println(Space.getPlatX());
