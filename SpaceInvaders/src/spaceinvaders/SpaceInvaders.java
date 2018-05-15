@@ -38,10 +38,12 @@ public class SpaceInvaders {
             
             meusmonstros[0].setY(meusmonstros[0].getY()+1);
             meusmonstros[1].setY(meusmonstros[1].getY()+1);
-             meusmonstros[2].setY(meusmonstros[2].getY()+1);
+            meusmonstros[2].setY(meusmonstros[2].getY()+1);
+            System.out.println(Space.getPlatX());
             if(Space.apertouDireita()){
                 Space.setPlatX(Space.getPlatX()+1);
             }
+            System.out.println(Space.getPlatX());
             if(Space.apertouEsquerda()){
                 Space.setPlatX(Space.getPlatX()-1);
             }
