@@ -23,7 +23,7 @@ public class SpaceInvaders {
         Tiro[] meustiros = new Tiro[100];
         //Quantidade de tiros na tela
         int quantidadeTiros = 0;
-        //Quantidade de monstros na tela
+        int posTiro = 76;
         int quantidadeMonst = 3;
         
         
@@ -55,6 +55,10 @@ public class SpaceInvaders {
                 if(Space.getPlatX()>1){
                 Space.setPlatX(Space.getPlatX()-1);
                 }
+            }
+            if(Space.apertouEspaco()){
+                meustiros[quantidadeTiros] = new Tiro(Space.getPlatX(),posTiro);
+                quantidadeTiros++;
             }
             
             
