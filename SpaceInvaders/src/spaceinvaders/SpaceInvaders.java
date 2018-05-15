@@ -17,18 +17,21 @@ public class SpaceInvaders {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //Criei os monstros que vão na tela
-        Inimigo[] meusmonstros = new Inimigo[3];
+        //Local que fica os inimigos
+        Inimigo[] meusmonstros = new Inimigo[8];
+        //Local que fica os tiros
+        Tiro[] meustiros = new Tiro[100];
+        //Quantidade de tiros na tela
         int quantidadeTiros = 0;
         int posTiro = 76;
         int quantidadeMonst = 3;
+        
+        
+        //Crio os monstros na tela
         meusmonstros[0] = new Inimigo(5, 6, 2);
         meusmonstros[1] = new Inimigo(30, 25, 2);
         meusmonstros[2] = new Inimigo(5, 15, 2);
         
-        
-        
-        Tiro[] meustiros = new Tiro[50];
         
         
         
@@ -38,11 +41,13 @@ public class SpaceInvaders {
         for (int i = 0; i < 150; i++) {
             
             meusmonstros[0].setY(meusmonstros[0].getY()+1);
-
-
+            meusmonstros[1].setY(meusmonstros[1].getY()+1);
+            meusmonstros[2].setY(meusmonstros[2].getY()+1);
+            System.out.println(Space.getPlatX());
             if(Space.apertouDireita()){
                 Space.setPlatX(Space.getPlatX()+1);
             }
+            System.out.println(Space.getPlatX());
             if(Space.apertouEsquerda()){
                 Space.setPlatX(Space.getPlatX()-1);
             }
@@ -51,6 +56,10 @@ public class SpaceInvaders {
                 quantidadeTiros++;
             }
             
+            
+            
+            
+            //Atualiza a tela
             Space.desenha(meusmonstros, quantidadeMonst, meustiros, quantidadeTiros);
         }
         
