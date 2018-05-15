@@ -71,6 +71,10 @@ public class SpaceInvaders {
                     meustiros[quantidadeTiros] = new Tiro(Space.getPlatX(), posTiro);
                     quantidadeTiros++;
                 }
+                
+                if(quantidadeMonst == 0){
+                    
+                }
 
                 //Atualiza a tela
                 Space.desenha(meusmonstros, quantidadeMonst, meustiros, quantidadeTiros);
