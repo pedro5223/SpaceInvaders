@@ -73,7 +73,8 @@ public class SpaceInvaders {
                 }
                 
                 if(quantidadeMonst == 0){
-                    
+                    i = 150;
+                    Space.ganhou();
                 }
 
                 //Atualiza a tela
