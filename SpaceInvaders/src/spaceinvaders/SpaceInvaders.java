@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package spaceinvaders;
 
 /**
@@ -25,58 +24,57 @@ public class SpaceInvaders {
         int quantidadeTiros = 0;
         int quantidadeMonst = 12;
         int posTiro = 76;
-        
-        
+
         //Crio os monstros na tela
         meusmonstros[0] = new Inimigo(2, 5, 2);
         meusmonstros[1] = new Inimigo(15, 5, 2);
         meusmonstros[2] = new Inimigo(28, 5, 2);
-        meusmonstros[3] = new Inimigo(41,5, 2);
-        meusmonstros[4] = new Inimigo(54,5,2);
-        meusmonstros[5] = new Inimigo(67,5, 2);
-        meusmonstros[6] = new Inimigo(2,15, 2);
-        meusmonstros[7] = new Inimigo(15,15, 2);
-        meusmonstros[8] = new Inimigo(28,15, 2);
-        meusmonstros[9] = new Inimigo(41,15, 2);
-        meusmonstros[10] = new Inimigo(54,15, 2);
-        meusmonstros[11] = new Inimigo(67,15, 2);
+        meusmonstros[3] = new Inimigo(41, 5, 2);
+        meusmonstros[4] = new Inimigo(54, 5, 2);
+        meusmonstros[5] = new Inimigo(67, 5, 2);
+        meusmonstros[6] = new Inimigo(2, 15, 2);
+        meusmonstros[7] = new Inimigo(15, 15, 2);
+        meusmonstros[8] = new Inimigo(28, 15, 2);
+        meusmonstros[9] = new Inimigo(41, 15, 2);
+        meusmonstros[10] = new Inimigo(54, 15, 2);
+        meusmonstros[11] = new Inimigo(67, 15, 2);
         //Inicia o jogo
         Space.init();
-       
-        for (int i = 0; i < 150; i++) {
-            //MOve os bonecos
-            for (int j = 0; j < 12; j++) {
-                meusmonstros[j].setY(meusmonstros[j].getY()+1);
-            }
-           
-            
-              
-              
-              System.out.println(Space.getPlatX());
-            if(Space.apertouDireita()){
-                if(Space.getPlatX()<75){
-                Space.setPlatX(Space.getPlatX()+1);
-                }
-            }
-            System.out.println(Space.getPlatX());
-            if(Space.apertouEsquerda()){
-                if(Space.getPlatX()>1){
-                Space.setPlatX(Space.getPlatX()-1);
-                }
-            }
-            if(Space.apertouEspaco()){
-                meustiros[quantidadeTiros] = new Tiro(Space.getPlatX(),posTiro);
-                quantidadeTiros++;
-            }
-            
-            
-            
-            
-            //Atualiza a tela
-            Space.desenha(meusmonstros, quantidadeMonst, meustiros, quantidadeTiros);
-        }
-        
-        
-    }
 
+        for (int i = 0; i < 150; i++) {
+            //Move os bonecos
+            for (int j = 0; j < 12; j++) {
+                meusmonstros[j].setY(meusmonstros[j].getY() + 1);
+            }
+        
+
+            //Verifica tiros
+            
+                for (int t = 0; t < quantidadeTiros; t++) {
+                    meustiros[t].y = meustiros[t].y-1;
+                }
+            
+
+                System.out.println(Space.getPlatX());
+                if (Space.apertouDireita()) {
+                    if (Space.getPlatX() < 75) {
+                        Space.setPlatX(Space.getPlatX() + 1);
+                    }
+                }
+                System.out.println(Space.getPlatX());
+                if (Space.apertouEsquerda()) {
+                    if (Space.getPlatX() > 1) {
+                        Space.setPlatX(Space.getPlatX() - 1);
+                    }
+                }
+                if (Space.apertouEspaco()) {
+                    meustiros[quantidadeTiros] = new Tiro(Space.getPlatX(), posTiro);
+                    quantidadeTiros++;
+                }
+
+                //Atualiza a tela
+                Space.desenha(meusmonstros, quantidadeMonst, meustiros, quantidadeTiros);
+            }
+
+        }
 }
