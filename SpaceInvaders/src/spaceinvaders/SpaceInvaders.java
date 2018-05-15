@@ -42,6 +42,7 @@ public class SpaceInvaders {
         meusmonstros[11] = new Inimigo(67,15, 2);
         //Inicia o jogo
         Space.init();
+       
         for (int i = 0; i < 150; i++) {
             //MOve os bonecos
             for (int j = 0; j < 12; j++) {
@@ -53,11 +54,15 @@ public class SpaceInvaders {
               
               System.out.println(Space.getPlatX());
             if(Space.apertouDireita()){
+                if(Space.getPlatX()<75){
                 Space.setPlatX(Space.getPlatX()+1);
+                }
             }
             System.out.println(Space.getPlatX());
             if(Space.apertouEsquerda()){
+                if(Space.getPlatX()>1){
                 Space.setPlatX(Space.getPlatX()-1);
+                }
             }
             if(Space.apertouEspaco()){
                 meustiros[quantidadeTiros] = new Tiro(Space.getPlatX(),posTiro);
