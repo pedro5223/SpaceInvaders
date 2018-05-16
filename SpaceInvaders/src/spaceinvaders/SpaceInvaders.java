@@ -41,15 +41,15 @@ public class SpaceInvaders {
         //Inicia o jogo
         Space.init();
 
-        for (int i = 0; i < 150; i++) {
+        for (int i = 0; i < 68; i++) {
             //Move os bonecos
             for (int j = 0; j < 12; j++) {
                 meusmonstros[j].setY(meusmonstros[j].getY() + 1);
-                 if(meusmonstros[j].getY()==67){
+                 if(meusmonstros[j].getY()==76){
                     Space.gameOver();
                   
                 }
-            }
+           }
         
 
             //Verifica tiros
@@ -57,6 +57,7 @@ public class SpaceInvaders {
                 for (int t = 0; t < quantidadeTiros; t++) {
                     meustiros[t].y = meustiros[t].y-1;
                 }
+                
             
 
                 System.out.println(Space.getPlatX());
@@ -80,7 +81,12 @@ public class SpaceInvaders {
                     i = 150;
                     Space.ganhou();
                 }
-
+                 
+                for(int k = 0;k<12;k++){
+                   
+                }
+                
+          
                 //Atualiza a tela
                 Space.desenha(meusmonstros, quantidadeMonst, meustiros, quantidadeTiros);
             }
