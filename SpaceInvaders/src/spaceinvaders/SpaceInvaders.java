@@ -57,7 +57,7 @@ public class SpaceInvaders {
                 for (int t = 0; t < quantidadeTiros; t++) {
                     meustiros[t].y = meustiros[t].y-1;
                 }
-                
+                //ttt
             
 
                 System.out.println(Space.getPlatX());
